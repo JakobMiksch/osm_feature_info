@@ -10,7 +10,7 @@ change the values from the default if you want. Then, run `./run.sh`:
 ```sh
 cp .env_template .env
 # Optionally change the values inside of .env
-./run.sh
+./run.sh https://download.geofabrik.de/europe/germany/bremen-latest.osm.pbf
 ```
 
 The database and the server will start running as daemons. A specific OSM PBF file will be downloaded and loaded into
