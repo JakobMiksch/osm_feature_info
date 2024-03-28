@@ -14,7 +14,8 @@ cp .env_template .env
 ```
 
 The database and the server will start running as daemons. A specific OSM PBF file will be downloaded and loaded into
-the database. You can make requests in the br
+the database. You can make requests in the browser.
+
 
 Request the API with your browser:
 
