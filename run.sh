@@ -1,6 +1,6 @@
 set -e
 
-PBF_FILE=$1
+PBF_FILE=${1}
 
 # launch application
 docker compose down && docker compose up -d
