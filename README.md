@@ -16,12 +16,11 @@ cp .env_template .env
 The database and the server will start running as daemons. A specific OSM PBF file will be downloaded and loaded into
 the database. You can make requests in the browser.
 
-
-Request the API with your browser:
+Request the API with your browser (if you changed the `OSM_PG_FEATURESERV_API_SYSTEM_PORT` env variable, you must change
+it accordingly below):
 
 - HTML: <http://localhost:9000/functions/postgisftw.osm_feature_info/items.html?latitude=53.112&longitude=8.755&distance=50&limit=10000>
 - JSON: <http://localhost:9000/functions/postgisftw.osm_feature_info/items.json?latitude=53.112&longitude=8.755&distance=50&limit=10000>
-
 
 ## Problems
 
