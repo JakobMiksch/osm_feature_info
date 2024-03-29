@@ -1,6 +1,6 @@
 services:
   api:
-    image: pramsey/pg_featureserv
+    image: pramsey/pg_featureserv:20240305
     ports:
       - "0.0.0.0:${OSM_PG_FEATURESERV_API_SYSTEM_PORT}:9000"
     environment:
@@ -9,7 +9,7 @@ services:
       db:
         condition: service_healthy
   db:
-    image: postgis/postgis:latest
+    image: postgis/postgis:16-3.4
     ports:
       - "0.0.0.0:${OSM_PG_FEATURESERV_DB_SYSTEM_PORT}:5432"
     volumes:
@@ -32,7 +32,7 @@ services:
       timeout: 5s
       retries: 5
   osm2pgsql:
-    image: iboates/osm2pgsql:latest
+    image: iboates/osm2pgsql:1.11.0
     environment:
       - PGHOST=db
       - PGPORT=5432
