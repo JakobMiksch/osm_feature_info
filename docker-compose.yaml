@@ -1,8 +1,8 @@
 services:
   api:
     build:
-      dockerfile: ./pg_featureserv/Dockerfile
-      # context: ./pg_featureserv
+      # dockerfile: ./pg_featureserv/Dockerfile
+      context: ./pg_featureserv
       args:
         - GOLANG_VERSION=1.21.6
         - TARGETARCH=amd64
