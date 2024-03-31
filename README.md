@@ -46,6 +46,11 @@ docker compose run --rm osm2pgsql \
   /data/sample.pbf
 ```
 
+Postprocessing:
+```sh
+docker compose exec db psql -f /data/post_process_tables.sql
+```
+
 Request the API with your browser (if you changed the `OSM_PG_FEATURESERV_API_SYSTEM_PORT` env variable, you must change
 it accordingly below):
 
