@@ -1,6 +1,17 @@
 services:
   api:
-    image: pramsey/pg_featureserv:20240305
+    build:
+      dockerfile: ./pg_featureserv/Dockerfile
+      # context: ./pg_featureserv
+      args:
+        - GOLANG_VERSION=1.21.6
+        - TARGETARCH=amd64
+        - BASE_REGISTRY=registry.access.redhat.com
+        - BASE_IMAGE=ubi8-micro
+        - PLATFORM=amd64
+        - VERSION=0.999
+        - BUILDTYPE
+      target: multi-stage
     ports:
       - "0.0.0.0:${OSM_PG_FEATURESERV_API_SYSTEM_PORT}:9000"
     environment:
