@@ -5,6 +5,8 @@ services:
       - "0.0.0.0:${OSM_PG_FEATURESERV_API_SYSTEM_PORT}:9000"
     environment:
       - DATABASE_URL=postgres://${OSM_PG_FEATURESERV_POSTGRES_USER}:${OSM_PG_FEATURESERV_POSTGRES_PASS}@db/${OSM_PG_FEATURESERV_POSTGRES_DBNAME}
+      - PGFS_WEBSITE_BASEMAPURL=https://tile.openstreetmap.de/{z}/{x}/{y}.png
+
     depends_on:
       db:
         condition: service_healthy
