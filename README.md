@@ -34,7 +34,7 @@ docker compose up -d --build web-client
 # open http://localhost:80 and click on the map
 ```
 
-## Without Docker
+### Without Docker
 
 1. create a PostGIS database
 2. load OSM data:
