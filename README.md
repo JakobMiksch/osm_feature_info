@@ -54,8 +54,6 @@ docker compose exec db psql -f /data/query_function.sql
     ./pg_featureserv
     ```
 
-5. Starting webclient is described in [web-client/README.md](web-client/README.md)
-
 ## Request API
 
 Request the API with your browser or any other tool:
