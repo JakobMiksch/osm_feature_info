@@ -2,3 +2,4 @@
 *.zip
 assets/
 pg_featureserv
+.env
