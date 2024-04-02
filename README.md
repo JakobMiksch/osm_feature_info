@@ -30,7 +30,7 @@ docker compose run --rm osm2pgsql \
 docker compose exec db psql -f /data/query_function.sql
 ```
 
-## Without Docker
+### Without Docker
 
 1. create PostGIS database
 2. load OSM data:
