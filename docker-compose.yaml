@@ -6,7 +6,6 @@ services:
     environment:
       - DATABASE_URL=postgres://${OSM_PG_FEATURESERV_POSTGRES_USER}:${OSM_PG_FEATURESERV_POSTGRES_PASS}@db/${OSM_PG_FEATURESERV_POSTGRES_DBNAME}
       - PGFS_WEBSITE_BASEMAPURL=https://tile.openstreetmap.de/{z}/{x}/{y}.png
-
     depends_on:
       db:
         condition: service_healthy
@@ -47,6 +46,11 @@ services:
     depends_on:
       db:
         condition: service_healthy
+
+  web-client:
+    build: ./web-client
+    ports:
+      - "80:4173"
 
 volumes:
   osm_pg_featureserv_db_data:
