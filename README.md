@@ -4,6 +4,19 @@ Attempt to create an API to get information about OSM features around a location
 
 ## Setup
 
+## Clone Repository with Submodule
+
+```sh
+# when cloning the first time
+# SSH version
+git clone --recursive git@github.com:JakobMiksch/osm_feature_info.git
+# HTTPS version
+git clone --recursive https://github.com/JakobMiksch/osm_feature_info.git
+
+# if you have cloned already
+git submodule update --init
+```
+
 ### Using Docker
 
 Tested on Linux and WSL. Adapt for other operating systems.
