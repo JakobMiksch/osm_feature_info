@@ -25,8 +25,8 @@ Tested on Linux and WSL. Adapt for other operating systems.
 cp .env_template .env
 # Optionally change environment variables inside .env
 
-# start services
-docker compose up -d
+# start database
+docker compose up -d --build db api
 
 # download sample data
 wget -O data/sample.pbf https://download.geofabrik.de/europe/germany/bremen-latest.osm.pbf
