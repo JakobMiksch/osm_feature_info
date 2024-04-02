@@ -13,7 +13,7 @@ cp .env_template .env
 # Optionally change environment variables inside .env
 
 # start services
-docker compose up -d
+docker compose up -d db api
 
 # download sample data
 wget -O data/sample.pbf https://download.geofabrik.de/europe/germany/bremen-latest.osm.pbf
@@ -28,15 +28,18 @@ docker compose run --rm osm2pgsql \
 
 # add function to DB
 docker compose exec db psql -f /data/query_function.sql
+
+# optional: run a webclient
+docker compose up -d --build web-client
+# open http://localhost:80 and click on the map
 ```
 
 ### Without Docker
 
-1. create PostGIS database
+1. create a PostGIS database
 2. load OSM data:
 
     ```sh
-    # load data into db
     osm2pgsql \
     --slim \
     --output=flex \
@@ -53,6 +56,8 @@ docker compose exec db psql -f /data/query_function.sql
     export PGFS_WEBSITE_BASEMAPURL="https://tile.openstreetmap.de/{z}/{x}/{y}.png"
     ./pg_featureserv
     ```
+
+5. Starting web-client is described in [web-client/README.md](web-client/README.md)
 
 ## Request API
 
